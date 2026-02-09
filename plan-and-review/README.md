@@ -14,23 +14,31 @@ You can also use `/staff-engineer` standalone to review any plan you've already 
 
 ## Installation
 
-Copy the `.claude` folder into your project root:
+Copy `agents/`, `commands/`, and `skills/` into your project's `.claude/` directory:
 
 ```bash
-cp -r .claude /path/to/your-project/
+# Copy skill directories into your project's .claude/:
+cp -r agents commands skills /path/to/your-project/.claude/
+
+# If .claude/ already has these subdirs, merge instead:
+rsync -a agents/ /path/to/your-project/.claude/agents/
+rsync -a commands/ /path/to/your-project/.claude/commands/
+rsync -a skills/ /path/to/your-project/.claude/skills/
 ```
 
-That's it. The commands and skills are automatically picked up by Claude Code.
+The commands and skills are automatically picked up by Claude Code.
 
 ## What's Included
 
 ```
-.claude/
+plan-and-review/
+├── INDEX.md
+├── README.md
+├── agents/
+│   └── staff-engineer.md     # Staff engineer agent definition
 ├── commands/
 │   ├── plan-and-review.md    # /plan-and-review slash command
 │   └── staff-engineer.md     # /staff-engineer slash command
-├── agents/
-│   └── staff-engineer.md     # Staff engineer agent definition
 └── skills/
     ├── plan-review-workflow/
     │   └── SKILL.md           # Orchestration logic

@@ -30,14 +30,17 @@ Parse the user's command to determine mode:
 
 ### Step 1: Inventory Check
 
-Scan user's installed skills:
+Scan user's installed skills at both project-level and user-level locations:
 
 ```bash
-# List all skill directories
+# Project-level skills
+ls -la .claude/skills/
+
+# User-level skills
 ls -la ~/.claude/skills/
 
-# For each skill, read SKILL.md to get description
-for dir in ~/.claude/skills/*/; do
+# For each skill in both locations, read SKILL.md to get description
+for dir in .claude/skills/*/ ~/.claude/skills/*/; do
   if [ -f "$dir/SKILL.md" ]; then
     echo "=== $(basename $dir) ==="
     head -20 "$dir/SKILL.md"
@@ -75,7 +78,7 @@ Compare user's installed skills against available skills:
 
 1. Categorize user's current skills using `references/categories.md`
 2. Identify missing categories
-3. Read user's CLAUDE.md to understand their work context
+3. Read user's CLAUDE.md to understand their work context (if it exists; if not, skip context-based filtering and present general recommendations)
 4. Match gaps to user's actual needs
 
 ### Step 4: Recommendations
@@ -106,12 +109,13 @@ When user wants to install a skill:
 1. **Locate**: Find skill in known repositories
 2. **Preview**: Show SKILL.md content and any references
 3. **Confirm**: Ask user to confirm installation
-4. **Install**:
+4. **Install** (project-level by default):
    ```bash
-   mkdir -p ~/.claude/skills/<skill-name>/references
+   mkdir -p .claude/skills/<skill-name>/references
    # Write SKILL.md
    # Write any reference files
    ```
+   For global install, use `~/.claude/skills/<skill-name>/` instead.
 5. **Verify**: Confirm skill appears in `/skills` command
 
 ## Categories

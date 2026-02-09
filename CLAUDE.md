@@ -13,5 +13,5 @@ Shared Claude Code skills and workflows for standardized AI-assisted development
 
 | Directory | What | When to read |
 | --------- | ---- | ------------ |
-| `plan-and-review/` | Two-Claude plan review workflow with staff engineer subagent | Adding plan review to a project, understanding the review pattern |
-| `skill-scout/` | Skills discovery, evaluation, and installation tool | Finding new Claude Code skills, managing skill inventory |
+| `plan-and-review/` | Two-Claude plan review workflow with staff engineer subagent (see `INDEX.md` for navigation) | Installing plan review into a project, understanding the review pattern |
+| `skill-scout/` | Skills discovery, evaluation, and installation tool (see `INDEX.md` for navigation) | Installing skill-scout into a project, managing skill inventory |

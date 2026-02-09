@@ -6,12 +6,11 @@ Track installed skills and their sources.
 
 | Skill | Category | Source | Installed |
 |-------|----------|--------|-----------|
-| skill-scout | Workflow | local | 2025-02-04 |
+| | | | |
 
 ## Installation History
 
-### 2025-02-04
-- `skill-scout` - Skills discovery and management
+_No installations recorded yet._
 
 ---
 
