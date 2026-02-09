@@ -1,6 +1,6 @@
 # aiops-dev-standard
 
-Shared Claude Code skills and workflows. Each subdirectory is a self-contained skill package — see per-package install instructions below.
+Experimental Claude Code skills and workflows built by the AIOps community to help you build cool stuff faster. Each subdirectory is a self-contained skill package — see per-package install instructions below.
 
 ## Installation
 
